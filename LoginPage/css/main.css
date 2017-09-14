@@ -1,0 +1,131 @@
+/*Desktop version*/
+body, html {
+    width: 100%;
+    max-width: 1440px;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+h1 {
+    display: inline-block;
+}
+.login-page {
+    text-align: center;
+    margin-top: 80px;
+}
+.select {
+    display: inline-block;
+    position: relative;
+    right: -100px;
+}
+.select select {
+    border: 0;
+}
+.select select option {
+    border: 0;
+}
+.user-name {
+    display: block;
+    margin: 0 0 30px -80px;
+}
+.user-name input {
+    margin-left: 10px;
+    height: 20px;
+}
+.password {
+    margin: 0 0 30px -103px;
+}
+.password input {
+    margin-left: 10px;
+    height: 20px;
+}
+.sign-in {
+    margin-top: 30px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-65%);
+    text-decoration: none;
+    width: 80px;
+    height: 20px;
+    padding: 5px 0 5px;
+    background-color: buttonface;
+    border-radius: 3px;
+    color: #000;
+}
+.sign-in:active {
+    color: #000;
+}
+.logout {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-60%);
+    text-decoration: none;
+    width: 80px;
+    height: 20px;
+    padding: 5px 0 5px;
+    background-color: buttonface;
+    border-radius: 3px;
+    color: #000;
+}
+.new-page {
+    margin-top: 50px;
+    text-align: center;
+}
+.user {
+    text-decoration: underline;
+}
+
+/*mobile version*/
+@media screen and (max-width: 360px) {
+
+    .select {
+        right: -80px;
+    }
+    .user-name {
+        margin-left: 23px;
+    }
+    .password {
+        margin-left: 0;
+    }
+    .sign-in {
+        transform: translateX(-10%);
+    }
+}
+@media screen and (max-width: 245px) {
+    .login-page {
+        margin-top: 30px;
+    }
+    h1 {
+        display: block;
+    }
+    .select {
+        margin-bottom: 20px;
+    }
+    .user-name {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .user-name input {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .password input {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .sign-in {
+        display: block;
+        margin: 25px auto;
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .select {
+        right: 0;
+    }
+}

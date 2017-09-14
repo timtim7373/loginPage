@@ -1,0 +1,10 @@
+<div class="new-page">
+    <label class="select">
+        <select ng-change="language.select()" ng-model="language.selected">
+            <option value="EN" selected>EN</option>
+            <option value="RU">RU</option>
+        </select>
+    </label>
+    <p>{{lp.p + lp.userName}}</p>
+    <button ng-click="logout()">{{lp.logout}}</button>
+</div>

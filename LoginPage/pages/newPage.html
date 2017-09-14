@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="loginPage" ng-controller="loginPageController">
+<head lang="en">
+    <meta charset="utf-8" />
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title ng-bind="lp.userName"></title>
+</head>
+<body>
+
+    <div class="new-page">
+        <label class="select">
+            <select ng-change="language.select()" ng-model="language.selected">
+                <option value="EN" selected>EN</option>
+                <option value="RU">RU</option>
+            </select>
+        </label>
+        <p class="you-signed">{{lp.p}} <span class="user">{{lp.userName}}</span></p>
+        <a class="logout" href="../index.html">{{lp.logout}}</a>
+    </div>
+
+    <script type="text/javascript" src="../js/libraries/angular.min.js"></script>
+    <script type="text/javascript" src="../js/loginPageController.js"></script>
+</body>
+</html>
