@@ -1,12 +1,12 @@
-var loginPage = angular.module("loginPage", []);
 
-var loginPageController = loginPage.controller("loginPageController", function ($scope, $compile) {
+loginPage.controller("loginPageController", function ($scope, $compile, $location, $templateCache) {
 
     $scope.lp = {};
 
     $scope.language = {
         en: {
-            title: "Sign in",
+            title: "Login Page",
+            h1: "Sign in",
             userNameLabel: "Name",
             userName: "Enter your name",
             passwordLabel: "Password",
@@ -16,7 +16,8 @@ var loginPageController = loginPage.controller("loginPageController", function (
             logout: "logout"
         },
         ru: {
-            title: "Войти",
+            title: "Login Page",
+            h1: "Войти",
             userNameLabel: "Имя",
             userName: "Введите ваше имя",
             passwordLabel: "Пароль",
@@ -34,4 +35,21 @@ var loginPageController = loginPage.controller("loginPageController", function (
 
     $scope.lp = $scope.language.en;
 
+    $scope.signIn = function () {
+      // $scope.lp.title = $scope.lp.userName;
+      // if ($scope.language.selected === "EN") $scope.lp = $scope.language.en;
+      // else if ($scope.language.selected === "RU") $scope.lp = $scope.language.ru;
+    };
+    $scope.location = function (answer, answerForm) {
+        $location.path("newpage");
+    };
+    $scope.$on('$routeChangeSuccess', function(event, next, current) {
+        if (typeof(current) !== 'undefined'){
+            console.log(next.scope.lp);
+            console.log(current.scope.lp);
+            next.scope.lp = current.scope.lp;
+            next.scope.language.selected = current.scope.language.selected;
+            next.scope.lp.title = current.scope.lp.userName;
+        }
+    });
 });
